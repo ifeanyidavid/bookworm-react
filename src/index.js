@@ -10,12 +10,15 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import rootReducer from "./rootReducer";
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-        <App />
+      <App />
     </Provider>
   </BrowserRouter>,
   document.getElementById("root")
